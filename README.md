@@ -7,6 +7,7 @@ Models are periodically saved during training and loaded in play to enable AI-dr
 **2 Game Design**
  
  2.1 Rules of the Game
+ 
 • Goal: Survive and score points; eliminate all the enemies and Bosses controlled by AI. 
 • Controls: Arrow keys to move; Space to shoot.
 • Player: Moves within screen bounds; shooting has cooldown; Game Over when health runs out. 
@@ -16,6 +17,7 @@ Models are periodically saved during training and loaded in play to enable AI-dr
 • Scoring: Points awarded for destroying enemies and dealing damage to the Boss; high scores unlock stronger scatter attacks, When the score ≥0, it is a single shot ; when the score ≥20, it upgrades to double shot spread; when the score ≥50, it upgrades to triple shot spread; when the score is ≥80, it upgrades to five-shot spread .
 
 2.2 Class Design of the Game
+
 PlaneWar [plane_war.py]
   - Manages game loop, waves, boss phase, score, lives, sprites
   - APIs: reset, handle_events, render_frame, get_state/get_enemy_states, step
@@ -44,6 +46,7 @@ Entry Points [main.py]
   - train_multi: Boss + Enemies training with per-episode logging
   - 
 2.3 UI Design
+    
 UI design follows the principles of "clarity, lightness, and readability": The start interface centrally displays the title and concise operation prompts (arrow keys to move, Space to shoot), and provides a Start button to enter the game; in the running state, Pause and Restart are retained in the upper right corner, with buttons featuring strikingly contrasting strokes and hover feedback to ensure quick accessibility; the pause state uses a semi-transparent mask and the text "Paused" to enhance the sense of state, and it can still be resumed or restarted with one click; Game Over retains the result prompt and Restart to reduce the burden of secondary operations. Fonts prioritize matching system sans-serif Chinese/English fonts, with distinct font size hierarchies, and colors follow high contrast and consistency.
 
 <img width="821" height="651" alt="image" src="https://github.com/user-attachments/assets/6f71a011-42c8-4441-b954-13239da9b79d" />
