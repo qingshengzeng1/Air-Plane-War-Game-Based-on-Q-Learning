@@ -1,10 +1,10 @@
-1 Introduction
+**1 Introduction**
 
 This project applies Deep Q-Learning (DQN) to an arcade-style Air Plane War game with both single-agent (Boss) and multi-agent (Boss + Enemies) training. Players face wave-based, AI-controlled enemies followed by a boss fight. Agents observe a compact, normalized game state—including positions, health values, nearby bullets, and timing—and select discrete actions (move and shoot) to maximize cumulative reward. In the multi-agent setup, the boss is controlled by its own DQN, while enemies share a policy that outputs actions per enemy instance.
 The technology stack uses Python for core logic, PyTorch to build and train DQN (tensor ops, neural modules, optimizers), and Pygame for graphics, audio, input, and the game loop. The environment supports headless training for speed and safe asset handling without a display, while the play mode provides an interactive UI (Start, Pause, Restart). Training progress is printed per episode and logged to training_log.txt; completion metadata is written to training_done.txt.
 Models are periodically saved during training and loaded in play to enable AI-driven behavior. If model files are missing, the game falls back to randomized policies so it remains playable. Through DQN integrated with the normalized state, agents learn policies that improve survivability, scoring, and phase progression within the Air Plane War environment.
 
-2 Game Design#
+**2 Game Design**
  
  2.1 Rules of the Game
 • Goal: Survive and score points; eliminate all the enemies and Bosses controlled by AI. 
